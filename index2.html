@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<link rel="stylesheet" href="styles2.css">
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["lname"].value;
+  var z = document.forms["myForm"]["mail"].value;
+  if (x == "" || y == "" || z == "") {
+    alert("Please fill out all sections");
+    return false;
+  } else if (!(z.includes("@"))) {
+    alert("Please use a valid email address");
+	return false;
+  } else {
+    alert("Thank you for your submission");
+	document.forms["myForm"]["fname"].disabled = true;
+	document.forms["myForm"]["lname"].disabled = true;
+	document.forms["myForm"]["mail"].disabled = true;
+  }
+}
+</script>
+</head>
+<body>
+<h1>Customer Information</h1>
+<ul>
+	<li><a href="#home">Home</a></li>
+	<li><a href="#news">News</a></li>
+	<li><a href="#contact">Contact</a></li>
+	<li><a href="#about">About</a></li>
+</ul>
+<br />
+<form name="myForm">
+	First Name: <input type="text" name="fname">
+	Last Name: <input type="text" name="lname">
+	Email: <input type="text" name="mail">
+	<br />
+	<br />
+	<button type="button" onclick="return validateForm()">Submit</button>
+</form>
+<br />
+<br />
+<figure>
+	<img src="beach.jpg" alt="beach" style="width:600px;height:230px">
+	<figcaption>James Phillips. 2017. Alamy Stock Photo. </figcaption>
+
+</figure>
+<br />
+<address>
+Written by <a href="mailto:example@mail.com"> Tatyanna Villegas
+</address>
+
+</body>
+</html>
