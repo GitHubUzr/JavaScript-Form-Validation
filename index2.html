@@ -1,3 +1,16 @@
+<!-- The purpose of this HTML file is to create a website that has
+     'Customer Information' as a header, has a mock navigation bar,
+	 collects user first name/last name/email address, has a submit
+	 button and applies form validation using JavaScript. If one of
+	 the text boxes are left blank, a message to fill out all
+	 sections will show after clicking the submit button. Also if
+	 the email is not valid, a message to fill out a 'proper' email
+	 will show after clicking the submit button. Once these
+	 conditions are fulfilled, a message thanking the user will
+	 show after clicking the submit button and the cells to input
+	 information will be disabled.
+  -->
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -8,14 +21,18 @@ function validateForm() {
   var x = document.forms["myForm"]["fname"].value;
   var y = document.forms["myForm"]["lname"].value;
   var z = document.forms["myForm"]["mail"].value;
+ <!-- If var x OR var y OR var z is blank, show the message below -->
   if (x == "" || y == "" || z == "") {
     alert("Please fill out all sections");
     return false;
+<!-- If var x does not include the @ symbol, show the message below -->
   } else if (!(z.includes("@"))) {
     alert("Please use a valid email address");
 	return false;
+<!-- If neither of the conditions are true, show the message below -->
   } else {
     alert("Thank you for your submission");
+<!-- This makes it so the specified cell in the form is disabled -->
 	document.forms["myForm"]["fname"].disabled = true;
 	document.forms["myForm"]["lname"].disabled = true;
 	document.forms["myForm"]["mail"].disabled = true;
@@ -25,6 +42,7 @@ function validateForm() {
 </head>
 <body>
 <h1>Customer Information</h1>
+<!-- This is a mock navigation bar that does not link to anything -->
 <ul>
 	<li><a href="#home">Home</a></li>
 	<li><a href="#news">News</a></li>
@@ -38,6 +56,7 @@ function validateForm() {
 	Email: <input type="text" name="mail">
 	<br />
 	<br />
+<!-- This calls on the function above -->
 	<button type="button" onclick="return validateForm()">Submit</button>
 </form>
 <br />
