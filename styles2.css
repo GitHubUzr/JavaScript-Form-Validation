@@ -9,11 +9,13 @@ submit {
 	font-size: 16px;
 	cursor: pointer;
 }
+/* The formatting for ul and li elements make them look like a navigation tab */
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+/* #333333 is a type of gray */
 	background-color: #333333;
 }
 li {
@@ -27,6 +29,7 @@ li a {
 	text-decoration: none;
 }
 li a:hover {
+/* #111111 is a type of black */
 	background-color: #111111;
 }
 address {
